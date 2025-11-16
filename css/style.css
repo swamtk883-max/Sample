@@ -1,0 +1,480 @@
+@charset "utf-8";
+
+body {
+    font-size: 100%;
+    color: #ffffff;
+    background-color: #FCFBF9;
+}
+
+.sec-title {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-family: 'Playfair+Display',serif;
+    text-align: center;
+    color: #333;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+}
+
+/*header*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 10;
+
+}
+
+h1 img {
+    width: 100px;
+    height: 100px;
+}
+
+.open h1 img {
+    display: none;
+}
+
+.toggle_btn {
+    width: 100px;
+    height: 100px;
+    /* background-color: #FCFBF9; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    cursor: pointer;
+    margin: 20px 30px 0 0;
+    transition: 0.3s;
+}
+
+.toggle_btn:hover {
+    opacity: 0.7;
+}
+
+.toggle_btn span {
+    width: 50%;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    right: 25%;  
+    transition: 0.3s;  
+}
+
+.toggle_btn span:nth-child(1) {
+    top: 30%;
+}
+
+.toggle_btn span:nth-child(2) {
+    top: 50%;
+}
+
+.toggle_btn span:nth-child(3) {
+    top: 70%;
+}
+
+.open .toggle_btn span:nth-child(1) {
+    top: 47%;
+    background-color: #ffffff;
+    transform: rotate(-45deg);
+}
+
+.open .toggle_btn span:nth-child(2),
+.open .toggle_btn span:nth-child(3) {
+    top: 47%;
+    background-color: #ffffff;
+    transform: rotate(45deg);
+}
+
+.mask {
+    pointer-events: none;
+}
+
+.navi {
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+    /* color: #ffffff; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 10;
+    transition: all 0.6s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.open .navi {
+    opacity: 0.9;
+    pointer-events: auto; 
+}
+
+.navi ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.navi a {
+    color: #ffffff;
+    font-family: 'Playfair Display',serif;
+    font-size: 1.5rem;
+    transition: 0.3s;
+    margin-bottom: 50px;
+}
+
+.navi a:hover {
+    opacity: 0.7;
+}
+
+.navi img {
+    width: 100px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+/*mainvisual*/
+
+.mainvisual {
+    position: relative; /* absolute ではなく relative */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* .mainvisual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+} */
+
+.mainvisual .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.mainvisual .image li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: slideshow 24s infinite;
+}
+
+.mainvisual .image li:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.mainvisual .image li:nth-child(2) {
+    animation-delay: 8s;
+}
+
+.mainvisual .image li:nth-child(3) {
+    animation-delay: 16s;
+}
+
+.mainvisual .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes slideshow {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    33% { opacity: 1; }
+    41% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.mainvisual p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    font-family: 'Shippori Mincho', serif;
+    /* border: 1px solid; */
+}
+
+
+/* ambience */
+
+.ambience {
+    margin-top: 150px;
+    color: #333;
+    text-align: center;
+}
+
+.ambience p {
+    font-size: 1.1rem;
+    font-family: 'Noto Sans JP',serif;
+    line-height: 1.6;
+}
+
+.ambience .txt {
+    margin-bottom: 20px;
+}
+
+
+
+/*menu*/
+
+.menu {
+    margin-top: 180px;
+    padding: 50px 0 50px 0;
+    background-color: #EFE8DC;
+}
+
+.menu .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 800px;
+}
+
+.menu .content img {
+    width: 100%;
+    height: auto;
+}
+
+.menu .content p {
+    color: #333;
+    font-family: 'Zen Kaku Gothic New',serif;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.menu a {
+    display: block;
+    width: 120px;
+    margin: 40px auto 0;
+    text-align: center;
+    font-family: 'Shippori Mincho',serif;
+    font-size: 1.25rem;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 5px 0;
+}
+
+.menu a:hover {
+    transform: scale(1.05);
+    opacity: 0.7;
+}
+
+
+
+/*height*/
+
+.height  {
+    margin-top: 150px;
+}
+
+.height img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 80px auto 0;
+}
+
+.height ul {
+    color: #333;
+    text-align: center;
+    margin-top: 20pxpx;
+}
+
+.height .coming-soon {
+    font-size: 4rem;
+    font-family: 'Shippori Mincho',serif;
+    margin-bottom: 10px;
+}
+
+.height .coming-soon-text {
+    font-size: 1.25rem;
+    font-family: 'Zen Kaku Gothic New',serif;
+}
+
+
+/*access*/
+
+.access {
+    margin-top: 150px;
+    padding: 50px 0 70px 0;
+    background-color: #E7D8C9;
+}
+
+.access .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #333;
+}
+
+.content dl {
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.11rem;
+}
+
+.content dl dt {
+   width: 120px;
+   padding: 5px 0;
+}
+
+.content dl dd {
+   width: calc(100% - 120px);
+   margin: 0;
+   padding: 5px 0;
+}
+
+.content .map {
+    width: 45%;
+}
+
+
+/*section*/
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 120px auto 0;
+}
+
+.sns-list {
+    display: flex;
+    flex-direction: column;
+    line-height: 5;
+    font-size: 1.2rem;
+    font-family: 'Zen Kaku Gothic New', serif;
+}
+
+.sns-list a:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    line-height: 5;
+    font-size: 1.2rem;
+    font-family: 'Zen Kaku Gothic New', serif;
+}
+
+.section a:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+
+/*footer*/
+
+footer {
+    margin: 0;
+    padding: 5px 0;
+    text-align: center;
+    color: #333;
+}
+
+
+/*レスポンシブ*/
+
+@media (max-width: 800px) {
+    .mainvisual p {
+        font-size: 1.05rem;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .menu .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 500px;
+    }
+
+    .menu .content p {
+        text-align: center;
+    }
+
+    .access .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content dl,
+    .content .map {
+        width: 90%;
+    }
+
+    .content dl {
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .container {
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+    }
+
+    .sns-list {
+        line-height: 3;
+        font-size: 1.5rem;
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    .sns-list::before {
+        content: "";
+        position: absolute;
+        bottom: -30px;
+        right: -75px;
+        width: 250px;
+        height: 1px;
+        background-color: #333;
+    }
+
+    .section {
+        line-height: 3;
+        font-size: 1.5rem;
+        margin-bottom: 80px;
+    }
+    
+    
+}
